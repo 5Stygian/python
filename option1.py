@@ -72,7 +72,7 @@ t.shapesize(turtleSize)
 def squareSpiral(amount):
     sideLength = 20
     for i in range(amount):
-        for _ in range(4):
+        for i in range(4):
             t.down()
             t.forward(sideLength)
             t.left(90)
@@ -81,7 +81,7 @@ def squareSpiral(amount):
         sideLength += 10 
 
 def plusQuarter():
-    for _ in range(2):
+    for i in range(2):
         t.forward(50)
         t.left(90)
         t.forward(100)
@@ -141,7 +141,7 @@ print("||                           ||")
 print("||    Turtle shape:          ||")
 print(f"||    {turtleShape:<22} ||")
 print("||                           ||")
-if turtleShape != "invisible"
+if turtleShape != "invisible":
     print("||    Turtle size:           ||")
     print(f"||    {turtleSize:<22} ||")
     print("||                           ||")
