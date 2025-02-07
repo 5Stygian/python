@@ -164,7 +164,7 @@ while repeat:
     print(".")
     sleep(1)
     print(".")
-    sleep(1.5)
+    sleep(1.2)
     print("===============================")
     print("||    Yes                    ||")
     print("||    No                     ||")
