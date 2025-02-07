@@ -106,8 +106,8 @@ while repeat:
 
     def reset():
         t.reset()
-        backgroundColor, turtleColor, shapeAsk = "black", "white", "invisible"
-        screenWidth, screenHeight, turtleSize, amount = 900, 600, 1, 0
+        backgroundColor, turtleColor, shapeAsk = ""
+        screenWidth, screenHeight, turtleSize, amount = 0
         print("\n" * 100)
     
     # actions
@@ -177,5 +177,9 @@ while repeat:
     if repeatIn == "yes":
         reset()
         repeat = True
+        print("===============================")
+    else: 
+        print("Please input a valid value")
+        repeatIn = input("Repeat: ").lower().strip()
 
 s.mainloop()
