@@ -20,7 +20,7 @@ while restart == "yes":
             turtle.color(turtlecolor)
             colorLoop = False
         except:
-            turtle.write("Invalid Color! Please enter a valid color", font=("Arial", 20))
+            turtle.write("Invalid Color! Please enter a valid color", font=("Arial", 20), align="center")
             time.sleep(2)
             turtle.clear()
             shapeLoop = True
@@ -30,7 +30,7 @@ while restart == "yes":
             turtle.shape(turtleshape)
             shapeLoop = False
         except:
-            turtle.write("Invalid Shape! Please enter a valid shape", font=("Arial", 20))
+            turtle.write("Invalid Shape! Please enter a valid shape", font=("Arial", 20), align="center")
             time.sleep(2)
             turtle.clear()
             bgColorLoop = True
@@ -41,7 +41,7 @@ while restart == "yes":
             bgColorLoop = False
             validShape = "no"
         except:
-            turtle.write("Invalid Color! Please enter a valid color", font=("Arial", 20))
+            turtle.write("Invalid Color! Please enter a valid color", font=("Arial", 20), align="center")
             time.sleep(2)
             turtle.clear()
             bgColorLoop = True
@@ -62,12 +62,19 @@ while restart == "yes":
             validShape = "yes"
         else:
             validShape = "no"
-            turtle.write("That is not a valid shape!", font=("Arial", 20))
+            turtle.write("That is not a valid shape!", font=("Arial", 20), align="center")
             time.sleep(2)
             turtle.clear()
     restart = ""
     while restart != "yes" or restart != "no":
         restart = screen.textinput("Play Again?", "Would you like to restart?")
-        turtle.write("Thanks for playing! You ran the program " + total + " times", font=("Arial", 20))
+        turtle.write(f"Thanks for playing! You ran the program {total} times", font=("Arial", 20), align="center")
+        if restart == "no":
+            turtle.bye()
+            break
+        if restart == "yes":
+            turtle.reset()
+            restart = "yes"
+            break
 
 screen.mainloop()
