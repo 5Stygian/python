@@ -68,12 +68,12 @@ while restart == "yes":
     restart = ""
     while restart != "yes" or restart != "no":
         restart = screen.textinput("Play Again?", "Would you like to restart?")
-        turtle.write(f"Thanks for playing! You ran the program {total} times", font=("Arial", 20), align="center")
         if restart == "no":
             turtle.bye()
             break
         if restart == "yes":
             turtle.reset()
+            turtle.write(f"Thanks for playing! You ran the program {total} times", font=("Arial", 20), align="center")
             restart = "yes"
             break
 
