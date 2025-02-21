@@ -16,7 +16,7 @@ while restart == "yes":
         while colorLoop:
                 total += 1
                 try:
-                        turtlecolor = screen.textinput("Turtle Color", "What color do you want your turtle to be?".lower().strip())
+                        turtlecolor = screen.textinput("Turtle Color", "What color do you want your turtle to be?").lower().strip()
                         turtle.color(turtlecolor)
                         colorLoop = False
                 except:
@@ -25,7 +25,7 @@ while restart == "yes":
                         turtle.clear()
                         shapeLoop = True
         while shapeLoop:
-                turtleshape = screen.textinput("Turtle Shape", "What shape do you want your turtle to be?".lower().strip())
+                turtleshape = screen.textinput("Turtle Shape", "What shape do you want your turtle to be?").lower().strip()
                 try:
                         turtle.shape(turtleshape)
                         shapeLoop = False
@@ -35,7 +35,7 @@ while restart == "yes":
                         turtle.clear()
                         bgColorLoop = True
         while bgColorLoop:
-                bg_color = screen.textinput("BGColor", "What color do you want the background to be?".lower().strip())
+                bg_color = screen.textinput("BGColor", "What color do you want the background to be?").lower().strip()
                 try:
                         screen.bgcolor(bg_color)
                         bgColorLoop = False
@@ -46,7 +46,7 @@ while restart == "yes":
                         turtle.clear()
                         bgColorLoop = True
         while validShape != "yes":
-                shape = textinput("Let's Draw!", "What shape should turtle draw?".lower().strip())
+                shape = textinput("Let's Draw!", "What shape should turtle draw?").lower().strip()
                 if shape == "square":
                         for i in range(4):
                                 turtle.forward(50)
@@ -67,13 +67,14 @@ while restart == "yes":
                         turtle.clear()
         restart = ""
         while restart != "yes" or restart != "no":
-                restart = screen.textinput("Play Again?", "Would you like to restart?".lower().strip())
+                restart = screen.textinput("Play Again?", "Would you like to restart?").lower().strip()
                 if restart == "no":
-                        turtle.bye()
+                        turtle.exit()
+                        turtle.write(f"Thanks for playing! You ran the program {total} times", font=("Arial", 20), align="center")
+                        time.sleep(2)
                         break
                 if restart == "yes":
                         turtle.reset()
-                        turtle.write(f"Thanks for playing! You ran the program {total} times", font=("Arial", 20), align="center")
                         restart = "yes"
                 break
 
