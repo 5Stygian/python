@@ -12,7 +12,7 @@ while restart == "yes":
     colorLoop   = True
     shapeLoop   = True
     bgColorLoop = True
-    validShape = ""
+    validShape  = ""
     while colorLoop:
         total += 1
         try:
