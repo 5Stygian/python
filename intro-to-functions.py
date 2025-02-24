@@ -14,7 +14,7 @@ formulaOptions = '''
 |    Formula2     |    2, f2    |
 +-----------------+-------------+'''
 
-def summation(lower_bound = 0, upper_bound = 1):
+def summation(lower_bound = 0, upper_bound = 1, formula = ""):
     while True:
         try:
             lower_bound = int(input("Lower bound: "))
@@ -24,7 +24,7 @@ def summation(lower_bound = 0, upper_bound = 1):
             lower_bound = int(input("Lower bound: "))
             upper_bound = int(input("Upper bound: "))
     for i in range(upper_bound): # loop through each itteration until upper bound in reached
-        
+        pass
 
 def formula2(num1, num2):
     pass
