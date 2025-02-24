@@ -1,5 +1,3 @@
-
-'''
 from turtle import *
 import time
 
@@ -8,7 +6,22 @@ screen = Screen()
 crush = Turtle()
 crush.color("black")
 
+def formula1(num1, num2):
+    pass
 
+def formula2(num1, num2):
+    pass
+
+def inputs(cColor, bgColor, formula):
+    crush.color(cColor)
+    screen.bgcolor(bgColor)
+    match formula:
+        case "1":
+           formula1() 
+        case "2":
+            formula2()
+        case _:
+            inputs()
 
 # The program loop variable
 again = "yes"
@@ -96,4 +109,3 @@ time.sleep(4)
 exit()
 
 screen.mainloop()
-'''
