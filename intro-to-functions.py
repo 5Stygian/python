@@ -6,16 +6,18 @@ screen = Screen()
 crush = Turtle()
 crush.color("black")
 
+def draw():
+    crush.up()
+    crush.goto(-100, 0)
+    crush.down()
+    # Drawing the shape with the user input
+    for i in range(repeat):
+        for i in range(4):
+            crush.forward(length)
+            crush.right(90)
+            crush.right(45)
 
-
-# The program loop variable
-again = "yes"
-while again == "yes":
-   # Resetting the turtle for a restart
-   crush.reset()
-   crush.pensize(5)
-   crush.speed(0)
-
+def setup():
    # Making screen color unbreakable
    while True:
        screenColor = textinput("Screen Color", "What color would you like the screen to be? ")
@@ -59,15 +61,16 @@ while again == "yes":
            time.sleep(2)
            crush.clear()
 
-   crush.up()
-   crush.goto(-100, 0)
-   crush.down()
-   # Drawing the shape with the user input
-   for i in range(repeat):
-       for i in range(4):
-           crush.forward(length)
-           crush.right(90)
-           crush.right(45)
+# The program loop variable
+again = "yes"
+while again == "yes":
+   # Resetting the turtle for a restart
+   crush.reset()
+   crush.pensize(5)
+   crush.speed(0)
+
+   # call the setup function to get user input
+   setup()
 
    # Making the restart option unbreakable
    while True:
@@ -81,8 +84,7 @@ while again == "yes":
            crush.write("Please only answer with yes or no. Try again.", font=("Arial", 20))
            time.sleep(2)
            crush.clear()
-
-
+   draw(length, repeat)
 
 # Clearing the screen for the turtle's goodbye
 crush.clear()
