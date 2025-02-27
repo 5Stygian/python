@@ -11,8 +11,13 @@ repeat = True
 amount = 0
 
 backgroundColor, turtleColor = 'Black', 'White'
+shapeAsk = ""
+screenWidth, screenHeight = 800, 600
+turtleSize = 1
+amount = 0
 
 invisibleFString = "Invisible (recommended)"
+
 
 # functions
 def squareSpiral(amount):
@@ -49,34 +54,42 @@ def tiledHexagons():
             t.left(60)
         t.right(120)
 
-while repeat:
-    '''
-    backgroundColor = str(input("Background color: ").lower().strip())
-    while not backgroundColor:
-        print("Please input a valid value")
-        backgroundColor = str(input("Background color: ").lower().strip())
 
-    turtleColor = input("Turtle color: ").lower().strip()
-    while not turtleColor:
-        print("Please input a valid value")
+'''
+try:
+    if not backgroundColor == '':
+        backgroundColor = input("Background color: ").lower().strip()
+except:
+    print("Invalid input, using black")
+    backgroundColor = "black"
+
+try:
+    if not turtleColor == '':
         turtleColor = input("Turtle color: ").lower().strip()
-    '''
+except:
+    print("Invalid input, using white")
+    turtleColor = "white"
+'''
+
+while repeat:
 
     while True:
+        backgroundColor = input("Background color: ")
         try:
-            if not backgroundColor == '':
-                 backgroundColor = str(input("Background color: ").lower().strip())
+            s.bgcolor(backgroundColor.lower().strip())
             break
-        except ValueError or TypeError or IndexError or backgroundColor == False:
-            print("Please input a valid value")
+        except:
+            print("Invalid input")
+
 
     while True:
+        turtleColor = input("Turtle color: ")
         try:
-            if not turtleColor == '':
-                turtleColor = str(input("Turtle color: ").lower().strip())
+            t.color(turtleColor.lower().strip())
             break
-        except ValueError:
-            print("Please input a valid value")
+        except:
+            print("Invalid input")
+
 
     while True:
         try:
@@ -115,7 +128,7 @@ while repeat:
         print("Please input a valid value")
         turtleShape = input("Turtle shape: ").lower().strip()
 
-    if turtleShape == "invisible":  # duran duran
+    if turtleShape == "invisible":
         t.hideturtle()
     else:
         t.shape(turtleShape)
@@ -127,6 +140,7 @@ while repeat:
     t.speed(0)
     t.color(turtleColor)
     t.shapesize(turtleSize)
+
 
     def reset():
         t.reset()
@@ -163,9 +177,9 @@ while repeat:
     print(f"||    {shapeAsk:<24} ||")
     print("||                             ||")
     if shapeAsk == "spiral":
-        print("||    Amount:                ||")
+        print("||    Amount:                  ||")
         print(f"||    {amount:<24} ||")
-        print("||                           ||")
+        print("||                             ||")
     print("||    Color:                   ||")
     print(f"||    {turtleColor:<24} ||")
     print("||                             ||")
